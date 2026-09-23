@@ -414,21 +414,25 @@ body.is-ready .hero-eyebrow::after {
   transform: translateY(-18px);
 }
 
-/* El logo va limpio: sin recuadro ni esquinas. Solo la imagen. */
+/* El logo va limpio: sin recuadro, sin fondo. Solo el nombre. */
 .loader-mark {
   position: relative;
   display: grid;
   place-items: center;
-  width: min(200px, 52vw);
-  height: min(200px, 52vw);
+  width: min(340px, 84vw);
   opacity: 0;
   animation: loaderMark 1.1s var(--ease-out) 0.15s forwards;
 }
 
-.loader-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.loader-wordmark {
+  display: block;
+  font-family: var(--hw-display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 8.6vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--paper);
+  text-align: center;
   filter: drop-shadow(0 0 34px color-mix(in srgb, var(--red) 32%, transparent));
 }
 
@@ -539,12 +543,6 @@ body.is-ready .hero-eyebrow::after {
   padding: 8px 0;
 }
 
-.site-header.is-compact .brand-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 9px;
-}
-
 .site-header.is-compact .brand-name {
   font-size: 1.1rem;
 }
@@ -602,30 +600,6 @@ body.is-ready .hero-eyebrow::after {
   align-items: center;
   gap: 13px;
   min-width: 0;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: clamp(42px, 2vw + 34px, 50px);
-  height: clamp(42px, 2vw + 34px, 50px);
-  border: 1px solid var(--line-2);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  transition: width 0.6s var(--ease-out), height 0.6s var(--ease-out),
-    border-color 0.35s ease, background 0.35s ease, border-radius 0.6s var(--ease-out);
-}
-
-.brand:hover .brand-mark {
-  border-color: color-mix(in srgb, var(--red) 45%, transparent);
-  background: color-mix(in srgb, var(--red) 8%, transparent);
-}
-
-.brand-logo {
-  width: 74%;
-  height: 74%;
-  object-fit: contain;
 }
 
 .brand-text {
@@ -2897,13 +2871,11 @@ main section[id] {
   }
 
   .loader-mark {
-    width: 100px;
-    height: 100px;
+    width: min(260px, 84vw);
   }
 
-  .loader-logo {
-    width: 54px;
-    height: 54px;
+  .loader-wordmark {
+    font-size: clamp(1.6rem, 9vw, 2.2rem);
   }
 }
 
@@ -3157,7 +3129,7 @@ main section[id] {
     <div class="loader-texture" aria-hidden="true"></div>
     <div class="loader-inner">
       <div class="loader-mark">
-        <img src="logo.jpg" alt="" class="loader-logo">
+        <span class="loader-wordmark" aria-hidden="true">Flo Divers</span>
       </div>
       <div class="loader-rings" aria-hidden="true">
         <span></span><span></span><span></span>
@@ -3172,10 +3144,9 @@ main section[id] {
   
 <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#inicio" class="brand" aria-label="FLO.DIVERS - Scuba Diving Cancun &amp; MUSA">
-        <span class="brand-mark"><img src="logo.jpg" alt="FLO.DIVERS - Scuba Diving Cancun &amp; MUSA" class="brand-logo"></span>
+      <a href="#inicio" class="brand" aria-label="Flo Divers - Scuba Diving Cancun &amp; MUSA">
         <span class="brand-text">
-          <span class="brand-name">FLO.DIVERS - Scuba Diving Cancun &amp; MUSA</span>
+          <span class="brand-name">Flo Divers</span>
           <span class="brand-tagline">Buceo profesional en Cancun</span>
         </span>
       </a>
@@ -3395,6 +3366,17 @@ main section[id] {
               <p>Te explicamos el proceso, los costos y los detalles sin rodeos. Sabes exactamente que incluye tu inmersion antes de confirmar cualquier cosa.</p>
             </div>
           </li>
+
+          <li class="timeline-step" data-step="5" data-reveal>
+            <span class="timeline-node" aria-hidden="true">
+              <span class="timeline-num">05</span>
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 1a5 5 0 0 1 5 5 5 5 0 0 1-2.1 4.06L17.8 18l-4-1.1L12 20l-1.8-3.1-4 1.1 2.9-7.94A5 5 0 0 1 7 6a5 5 0 0 1 5-5Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+            </span>
+            <div class="timeline-card">
+              <h3>Equipo profesional y seguro</h3>
+              <p>Contamos con todo el equipo de buceo mas profesional y seguro, mantenido en optimas condiciones para que cada inmersion sea comoda, confiable y sin contratiempos.</p>
+            </div>
+          </li>
         </ol>
 
         <div class="why-us-cta" data-reveal>
@@ -3546,9 +3528,8 @@ viernes	8 a.m.–6 p.</span>
 <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#inicio" class="brand">
-          <span class="brand-mark"><img src="logo.jpg" alt="FLO.DIVERS - Scuba Diving Cancun &amp; MUSA" class="brand-logo"></span>
-          <span class="brand-text"><span class="brand-name">FLO.DIVERS - Scuba Diving Cancun &amp; MUSA</span><span class="brand-tagline">Buceo profesional en Cancun</span></span>
+        <a href="#inicio" class="brand" aria-label="Flo Divers - Scuba Diving Cancun &amp; MUSA">
+          <span class="brand-text"><span class="brand-name">Flo Divers</span><span class="brand-tagline">Buceo profesional en Cancun</span></span>
         </a>
         <p>Flo.divers es un club de buceo en Cancun con instruccion profesional y atencion cuidadosa. Cada inmersion esta diseñada para ser segura, ordenada y memorable.</p>
       </div>
