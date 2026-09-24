@@ -1720,6 +1720,32 @@ main section[id] {
 }
 
 /* =========================================================
+   TOURS ESPECIALES
+   ========================================================= */
+.special-tours-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 26px);
+}
+
+.special-tour-item {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.special-tour-item > img,
+.special-tour-item > video {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.02) brightness(1.03);
+}
+
+/* =========================================================
    GALLERY - 6 IMAGES
    ========================================================= */
 .gallery-grid {
@@ -2754,6 +2780,10 @@ main section[id] {
     grid-template-columns: 1fr;
   }
 
+  .special-tours-grid {
+    grid-template-columns: 1fr;
+  }
+
   /* Galeria: 2 columnas x 3 filas */
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3238,7 +3268,7 @@ main section[id] {
             <div class="service-body" data-reveal-group>
               <div class="service-body-head" data-reveal>
                 <span class="service-index" aria-hidden="true">01</span>
-                <span class="tag">Formacion</span>
+                <span class="tag">Cursos de Buceo en diferentes Niveles</span>
               </div>
               <h3 class="service-title" data-reveal>Cursos de buceo certificados</h3>
               <p class="service-desc" data-reveal>Aprende a bucear con instructores profesionales que te guian paso a paso, desde teoria hasta tu primera inmersion en mar abierto. Ideal para principiantes sin experiencia previa.</p>
@@ -3254,19 +3284,19 @@ main section[id] {
 
           <article class="service-row service-row--reverse">
             <div class="service-media" data-reveal="media">
-              <img src="img/3.jpg" alt="Dives guiados en Cancun" loading="lazy">
+              <img src="img/3.jpg" alt="Tour Guiados en Cancun" loading="lazy">
             </div>
             <div class="service-body" data-reveal-group>
               <div class="service-body-head" data-reveal>
                 <span class="service-index" aria-hidden="true">02</span>
                 <span class="tag">Experiencia</span>
               </div>
-              <h3 class="service-title" data-reveal>Dives guiados en Cancun</h3>
+              <h3 class="service-title" data-reveal>Tour Guiados en Cancun</h3>
               <p class="service-desc" data-reveal>Exploraciones en los mejores sitios de buceo de Cancun y el Caribe mexicano, con guias que conocen cada rincón del arrecife y velan por tu seguridad en cada momento.</p>
               <ul class="service-list">
                 <li data-reveal>Guia certificado en cada salida</li>
                 <li data-reveal>Briefing de seguridad antes de cada dive</li>
-                <li data-reveal>Equipo completo disponible para rentar</li>
+                <li data-reveal>Equipo básico completo incluido</li>
                 <li data-reveal>Grupos pequenos para mejor atencion</li>
                 <li data-reveal>Sitios seleccionados segun tu nivel</li>
               </ul>
@@ -3427,8 +3457,8 @@ main section[id] {
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
-            <img src="img/12.jpg" alt="Buceador descendiendo entre corales en aguas turquesa de Cancun" loading="lazy">
-            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="1" aria-label="Ampliar imagen: Buceador descendiendo entre corales en aguas turquesa de Cancun">
+            <img src="img/17.jpg" alt="Buceadores observando una tortuga marina en el arrecife" loading="lazy">
+            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="1" aria-label="Ampliar imagen: Buceadores observando una tortuga marina en el arrecife">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
@@ -3439,8 +3469,8 @@ main section[id] {
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
-            <img src="img/14.jpg" alt="Instructor senalando punto de interes bajo el agua a un alumno" loading="lazy">
-            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="3" aria-label="Ampliar imagen: Instructor senalando punto de interes bajo el agua a un alumno">
+            <img src="img/18.jpg" alt="Buzo listo para sumergirse desde la embarcacion" loading="lazy">
+            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="3" aria-label="Ampliar imagen: Buzo listo para sumergirse desde la embarcacion">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
@@ -3451,8 +3481,8 @@ main section[id] {
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
-            <img src="img/16.jpg" alt="Grupo de buceadores sonriendo en la embarcacion tras la inmersion" loading="lazy">
-            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="5" aria-label="Ampliar imagen: Grupo de buceadores sonriendo en la embarcacion tras la inmersion">
+            <img src="img/19.jpg" alt="Buzo explorando el Museo Subacuatico MUSA en Cancun" loading="lazy">
+            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="5" aria-label="Ampliar imagen: Buzo explorando el Museo Subacuatico MUSA en Cancun">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
@@ -3467,6 +3497,26 @@ main section[id] {
             <span>Reserva tu inmersion</span>
             <svg viewBox="0 0 24 24" class="btn-icon btn-icon--arrow" aria-hidden="true"><path fill="currentColor" d="M12 16.5 5 9.5 6.4 8.1l5.6 5.6 5.6-5.6L19 9.5Z"/></svg>
           </button>
+        </div>
+      </div>
+    </section>
+<section class="special-tours" id="tours-especiales">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head-main">
+            <h2 class="section-title" data-reveal>Tours especiales <span class="text-gold">sujetos a disponibilidad</span></h2>
+          </div>
+        </div>
+        <div class="special-tours-grid" data-reveal-group>
+          <figure class="special-tour-item" data-reveal="media">
+            <img src="img/20.jpg" alt="Tiburon toro en tour especial de buceo" loading="lazy">
+          </figure>
+          <figure class="special-tour-item" data-reveal="media">
+            <img src="img/21.jpg" alt="Buceadores junto a tiburones en tour especial" loading="lazy">
+          </figure>
+          <figure class="special-tour-item" data-reveal="media">
+            <video src="img/22.mp4" controls playsinline preload="metadata"></video>
+          </figure>
         </div>
       </div>
     </section>
@@ -3498,9 +3548,7 @@ main section[id] {
               <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm.9-13H11v6l5.2 3.1.9-1.5-4.2-2.5Z"/></svg></span>
               <span class="contact-text">
                 <span class="contact-label">Horario</span>
-                <span>miércoles	8 a.m.–6 p.m.
-jueves	8 a.m.–6 p.m.
-viernes	8 a.m.–6 p.</span>
+                <span>8 a.m. - 5 p.m.</span>
               </span>
             </li>
           </ul>
